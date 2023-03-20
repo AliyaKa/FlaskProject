@@ -1,5 +1,6 @@
+import os
 from flask import Flask, render_template
-
+from flask_migrate import Migrate
 from blog.views.auth import auth_app, login_manager
 from blog.views.users import users_app
 from blog.views.articles import articles_app
@@ -14,14 +15,15 @@ def index():
     return render_template('index.html')
 
 
-app.config["SECRET_KEY"] = 'abcdefg123456'
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///blog.sqlite"
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+cfg_name = os.environ.get("CONFIG_NAME") or "ProductionConfig"
+app.config.from_object(f"blog.config.{cfg_name}")
+
+
 db.init_app(app)
+migrate = Migrate(app, db)
 
 app.register_blueprint(users_app, url_prefix='/users')
 app.register_blueprint(articles_app, url_prefix='/articles')
 app.register_blueprint(auth_app, url_prefix='/auth')
 login_manager.init_app(app)
-
 

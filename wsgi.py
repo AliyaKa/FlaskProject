@@ -16,8 +16,6 @@ def init_db():
 @app.cli.command("create-users")
 def create_users():
     admin = User(username="admin", is_staff=True)
-    james = User(username="aliya")
     db.session.add(admin)
-    db.session.add(james)
     db.session.commit()
     print("done! created users")
