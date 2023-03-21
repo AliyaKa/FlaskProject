@@ -31,10 +31,6 @@ app.register_blueprint(auth_app, url_prefix='/auth')
 login_manager.init_app(app)
 
 
-@app.cli.command("init-db")
-def init_db():
-    db.create_all()
-
 @app.cli.command("create-admin")
 def create_admin():
     """
