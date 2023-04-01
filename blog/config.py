@@ -6,7 +6,7 @@ class BaseConfig(object):
     TESTING = False
     SQLALCHEMY_DATABASE_URI = "postgres://aliya:RxMI3AlsshkqmNCZNJ0qgzkQDP8DN3nj@dpg-cgk7jh8rddleudtb2oag-a/blog_7ozi"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SECRET_KEY = "abcdefg123456"
+    SECRET_KEY = "80a7a7135a45072ded4c141bb1a4c472"
     WTF_CSRF_ENABLED = True
     FLASK_ADMIN_SWATCH = 'cosmo'
     OPENAPI_URL_PREFIX = '/api/swagger'
