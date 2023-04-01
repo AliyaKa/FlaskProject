@@ -4,9 +4,9 @@ import os
 class BaseConfig(object):
     DEBUG = False
     TESTING = False
-    SQLALCHEMY_DATABASE_URI = "postgres://aliya:RxMI3AlsshkqmNCZNJ0qgzkQDP8DN3nj@dpg-cgk7jh8rddleudtb2oag-a/blog_7ozi"
+    SQLALCHEMY_DATABASE_URI = "ppostgresql://blog_5ai7_user:fIPWnuK8fqHBkrsVVwyURTptR8E1k8c9@dpg-cgk9dskeoogkndht64cg-a.oregon-postgres.render.com/blog_5ai7"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SECRET_KEY = "80a7a7135a45072ded4c141bb1a4c472"
+    SECRET_KEY = ""
     WTF_CSRF_ENABLED = True
     FLASK_ADMIN_SWATCH = 'cosmo'
     OPENAPI_URL_PREFIX = '/api/swagger'
