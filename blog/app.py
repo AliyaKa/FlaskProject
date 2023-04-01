@@ -10,6 +10,7 @@ from blog.views.articles import articles_app
 from blog.views.authors import authors_app
 from blog.models.database import db
 from blog.admin import admin
+from blog.api import init_api
 
 
 app = Flask(__name__)
@@ -25,6 +26,7 @@ app.config.from_object(f"blog.config.{cfg_name}")
 
 
 db.init_app(app)
+api = init_api(app)
 migrate = Migrate(app, db)
 flask_bcrypt.init_app(app)
 login_manager.init_app(app)
@@ -35,6 +37,7 @@ app.register_blueprint(users_app, url_prefix='/users')
 app.register_blueprint(articles_app, url_prefix='/articles')
 app.register_blueprint(auth_app, url_prefix='/auth')
 app.register_blueprint(authors_app, url_prefix="/authors")
+
 
 
 @app.cli.command("create-admin")
