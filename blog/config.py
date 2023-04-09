@@ -6,7 +6,7 @@ class BaseConfig(object):
     TESTING = False
     SQLALCHEMY_DATABASE_URI = "sqlite:///:memory:"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SECRET_KEY = "123456"
+    SECRET_KEY = "1234567"
     WTF_CSRF_ENABLED = True
     FLASK_ADMIN_SWATCH = 'cosmo'
     OPENAPI_URL_PREFIX = '/api/swagger'
